@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ملف إنجاز أ. منى سعيد الزنبحي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f2eb;
+      --surface: rgba(255,255,255,.76);
+      --surface-solid: #ffffff;
+      --text: #2b3537;
+      --muted: #667476;
+      --primary: #789c95;
+      --primary-dark: #52746e;
+      --accent: #c7a46b;
+      --accent-soft: #efe3cf;
+      --ring: rgba(120,156,149,.28);
+      --shadow: 0 24px 70px rgba(55, 76, 73, .14);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Tajawal", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(120,156,149,.28), transparent 32rem),
+        radial-gradient(circle at bottom left, rgba(199,164,107,.25), transparent 26rem),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.26) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.26) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      width: min(1180px, calc(100% - 32px));
+      margin: 14px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,.7);
+      background: rgba(255,255,255,.56);
+      backdrop-filter: blur(18px);
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(55,76,73,.08);
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 900;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 12px 22px rgba(82,116,110,.25);
+    }
+
+    .links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .links a {
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: .25s ease;
+    }
+
+    .links a:hover {
+      background: rgba(120,156,149,.12);
+      color: var(--primary-dark);
+    }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 42px;
+      align-items: center;
+      padding: 74px 0 54px;
+      perspective: 1200px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(199,164,107,.16);
+      color: #8b6a38;
+      font-weight: 800;
+      margin-bottom: 18px;
+      animation: fadeUp .7s both;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 74px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: #243234;
+      animation: fadeUp .7s .08s both;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.95;
+      margin: 20px 0 28px;
+      animation: fadeUp .7s .16s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp .7s .24s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .btn.primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 16px 32px rgba(82,116,110,.24);
+    }
+
+    .btn.ghost {
+      color: var(--primary-dark);
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(120,156,149,.18);
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+      transform-style: preserve-3d;
+      animation: floatIn .9s .1s both;
+    }
+
+    .orb {
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(120,156,149,.26), rgba(199,164,107,.18));
+      filter: blur(.1px);
+      transform: translateZ(-120px);
+      animation: breathe 5s ease-in-out infinite;
+    }
+
+    .portfolio-card {
+      width: min(430px, 92vw);
+      min-height: 500px;
+      border-radius: 42px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,255,255,.48)),
+        linear-gradient(135deg, rgba(120,156,149,.18), rgba(199,164,107,.16));
+      border: 1px solid rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      transform: rotateY(-10deg) rotateX(6deg);
+      animation: cardFloat 6s ease-in-out infinite;
+    }
+
+    .portfolio-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(120,156,149,.18);
+      top: -92px;
+      left: -88px;
+    }
+
+    .portfolio-card::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,.68);
+      pointer-events: none;
+    }
+
+    .card-top {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 116px;
+      height: 116px;
+      border-radius: 34px;
+      display: grid;
+      place-items: center;
+      font-size: 44px;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--primary-dark));
+      box-shadow: 0 22px 38px rgba(82,116,110,.22);
+    }
+
+    .badge {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.66);
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .card-title {
+      position: relative;
+      z-index: 1;
+      margin-top: 44px;
+    }
+
+    .card-title span {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .card-title h2 {
+      font-size: 34px;
+      line-height: 1.25;
+      margin: 8px 0 14px;
+    }
+
+    .mini-stats {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 42px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 14px 8px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.58);
+      border: 1px solid rgba(255,255,255,.65);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 22px;
+    }
+
+    .stat small { color: var(--muted); font-weight: 700; }
+
+    section { padding: 72px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0;
+      color: #253235;
+    }
+
+    .section-head p {
+      max-width: 560px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: 0 18px 50px rgba(55,76,73,.08);
+      backdrop-filter: blur(18px);
+      transition: .28s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 70px rgba(55,76,73,.14);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      background: linear-gradient(135deg, rgba(120,156,149,.18), rgba(199,164,107,.18));
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .about-panel {
+      padding: 34px;
+      border-radius: 36px;
+      background: linear-gradient(145deg, rgba(120,156,149,.95), rgba(82,116,110,.94));
+      color: #fff;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-panel::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      bottom: -90px;
+      left: -70px;
+    }
+
+    .about-panel h2 { margin: 0 0 14px; font-size: 34px; }
+    .about-panel p { line-height: 2; color: rgba(255,255,255,.88); }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.7);
+      box-shadow: 0 14px 36px rgba(55,76,73,.07);
+    }
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin-top: 7px;
+      background: var(--accent);
+      box-shadow: 0 0 0 7px rgba(199,164,107,.14);
+    }
+
+    .upload-zone {
+      padding: 32px;
+      border-radius: 34px;
+      background: var(--surface);
+      border: 2px dashed rgba(120,156,149,.42);
+      text-align: center;
+      transition: .25s ease;
+    }
+
+    .upload-zone.dragover {
+      background: rgba(120,156,149,.1);
+      border-color: var(--primary-dark);
+      transform: scale(1.01);
+    }
+
+    .upload-zone input { display: none; }
+
+    .file-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.74);
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,.76);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .photo {
+      min-height: 210px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(145deg, rgba(120,156,149,.28), rgba(199,164,107,.28)),
+        #fff;
+      box-shadow: 0 18px 46px rgba(55,76,73,.09);
+      transition: .28s ease;
+    }
+
+    .photo:nth-child(2), .photo:nth-child(5) { transform: translateY(24px); }
+    .photo:hover { transform: translateY(-8px) scale(1.02); }
+
+    .photo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 28% 25%, rgba(255,255,255,.8), transparent 3.4rem),
+        linear-gradient(135deg, transparent, rgba(255,255,255,.36));
+    }
+
+    .photo span {
+      position: absolute;
+      right: 18px;
+      bottom: 16px;
+      left: 18px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.68);
+      color: var(--primary-dark);
+      font-weight: 900;
+      backdrop-filter: blur(12px);
+    }
+
+    .footer {
+      padding: 36px 0 46px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: .7s ease;
+    }
+
+    [data-reveal].show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(28px) scale(.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: translateZ(-120px) scale(1); }
+      50% { transform: translateZ(-120px) scale(1.08); }
+    }
+
+    @keyframes cardFloat {
+      0%, 100% { transform: rotateY(-10deg) rotateX(6deg) translateY(0); }
+      50% { transform: rotateY(-4deg) rotateX(3deg) translateY(-16px); }
+    }
+
+    @media (max-width: 980px) {
+      .links { display: none; }
+      .hero, .about-wrap { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+      .hero-visual { min-height: 500px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+
+    @media (max-width: 620px) {
+      .container, .nav { width: min(100% - 22px, 1180px); }
+      .nav { top: 8px; border-radius: 22px; }
+      .brand { font-size: 14px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .hero { min-height: auto; padding: 42px 0 24px; }
+      .hero-visual { min-height: 430px; }
+      .portfolio-card { min-height: 430px; padding: 22px; border-radius: 34px; transform: none; }
+      .avatar { width: 92px; height: 92px; border-radius: 28px; font-size: 36px; }
+      .card-title h2 { font-size: 28px; }
+      .grid, .gallery { grid-template-columns: 1fr; }
+      .photo:nth-child(2), .photo:nth-child(5) { transform: none; }
+      section { padding: 48px 0; }
+      .mini-stats { grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#home" class="brand">
+      <span class="brand-mark">م</span>
+      <span>ملف إنجاز وكيلة الشؤون الطلابية</span>
+    </a>
+    <div class="links">
+      <a href="#about">نبذة</a>
+      <a href="#tasks">المهام</a>
+      <a href="#goals">الأهداف</a>
+      <a href="#achievements">الإنجازات</a>
+      <a href="#files">الملفات</a>
+      <a href="#gallery">المعرض</a>
+    </div>
+  </nav>
+
+  <main id="home" class="container">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">واجهة تفاعلية حديثة · تصميم 3D</div>
+        <h1>ملف إنجاز<br>أ. منى سعيد الزنبحي</h1>
+        <p>
+          بورتفوليو مهني يعرض جهود وكيلة الشؤون الطلابية في متابعة الطالبات،
+          تطوير البيئة المدرسية، تعزيز الانضباط، وتوثيق المبادرات والإنجازات بصورة عصرية ومنظمة.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#files">رفع المرفقات</a>
+          <a class="btn ghost" href="#achievements">استعراض الإنجازات</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="واجهة ثلاثية الأبعاد لملف الإنجاز">
+        <div class="orb"></div>
+        <div class="portfolio-card">
+          <div class="card-top">
+            <div class="avatar">م</div>
+            <div class="badge">Student Affairs</div>
+          </div>
+          <div class="card-title">
+            <span>Professional Portfolio</span>
+            <h2>قيادة تربوية<br>برؤية واضحة وأثر مستدام</h2>
+            <p>توثيق منظم للمهام، الأهداف، الشواهد، الصور، والملفات الداعمة.</p>
+          </div>
+          <div class="mini-stats">
+            <div class="stat"><strong>01</strong><small>متابعة</small></div>
+            <div class="stat"><strong>02</strong><small>إنجاز</small></div>
+            <div class="stat"><strong>03</strong><small>أثر</small></div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </main>
+
+  <section id="about">
+    <div class="container about-wrap">
+      <div class="about-panel" data-reveal>
+        <h2>نبذة عني</h2>
+        <p>
+          وكيلة شؤون طلابية تسعى إلى بناء بيئة مدرسية آمنة ومحفزة، تهتم برعاية الطالبات،
+          متابعة السلوك والمواظبة، دعم البرامج التربوية، وتوثيق العمل المؤسسي بما يعكس جودة الأداء وأثره.
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-reveal>
+          <span class="dot"></span>
+          <div><h3>رؤية العمل</h3><p>تحقيق تجربة تعليمية منظمة تراعي احتياجات الطالبات وتعزز الانتماء والمسؤولية.</p></div>
+        </div>
+        <div class="timeline-item" data-reveal>
+          <span class="dot"></span>
+          <div><h3>منهجية التوثيق</h3><p>جمع الشواهد والملفات والصور وتصنيفها بطريقة تسهل الرجوع إليها وتبرز جودة المخرجات.</p></div>
+        </div>
+        <div class="timeline-item" data-reveal>
+          <span class="dot"></span>
+          <div><h3>الأثر المستهدف</h3><p>رفع مستوى الانضباط، تحسين التواصل، وتمكين البرامج الطلابية داخل المدرسة.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tasks">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <h2>أهم مهام الوكيلة</h2>
+          <p>محاور عملية تختصر دور وكيلة الشؤون الطلابية داخل المدرسة.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card" data-reveal><div class="icon">📋</div><h3>متابعة الانضباط</h3><p>متابعة الحضور والغياب والتأخر، ورصد المؤشرات ومعالجة الحالات بالتنسيق مع الفريق المدرسي.</p></article>
+        <article class="card" data-reveal><div class="icon">🤝</div><h3>رعاية الطالبات</h3><p>دعم الطالبات تربويًا وسلوكيًا وتعزيز بيئة آمنة قائمة على الاحترام والتحفيز.</p></article>
+        <article class="card" data-reveal><div class="icon">🏫</div><h3>تنظيم البيئة المدرسية</h3><p>الإشراف على انسيابية اليوم الدراسي والفسح والمناوبات والفعاليات الطلابية.</p></article>
+        <article class="card" data-reveal><div class="icon">📣</div><h3>التواصل الفعال</h3><p>تعزيز التواصل مع الإدارة والمعلمات وأولياء الأمور بما يخدم مصلحة الطالبات.</p></article>
+        <article class="card" data-reveal><div class="icon">🗂️</div><h3>التوثيق والمتابعة</h3><p>أرشفة النماذج والتقارير والشواهد وفق تنظيم واضح يدعم جودة العمل.</p></article>
+        <article class="card" data-reveal><div class="icon">⭐</div><h3>دعم المبادرات</h3><p>المشاركة في تنفيذ البرامج الهادفة التي تنمي القيم والمهارات والانتماء المدرسي.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="goals">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div><h2>الأهداف</h2><p>أهداف تشغيلية وتربوية قابلة للتوثيق والقياس.</p></div>
+      </div>
+      <div class="grid">
+        <article class="card" data-reveal><div class="icon">🎯</div><h3>رفع جودة الأداء</h3><p>تطوير الإجراءات اليومية وتسهيل الوصول إلى البيانات والشواهد.</p></article>
+        <article class="card" data-reveal><div class="icon">🌿</div><h3>تعزيز القيم</h3><p>غرس قيم الانضباط، الاحترام، المسؤولية، والمبادرة لدى الطالبات.</p></article>
+        <article class="card" data-reveal><div class="icon">📈</div><h3>تحسين المؤشرات</h3><p>متابعة مؤشرات المواظبة والسلوك والمشاركة الطلابية والعمل على تحسينها.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div><h2>الإنجازات</h2><p>مساحة لعرض أبرز المبادرات والنتائج والشواهد خلال العام الدراسي.</p></div>
+      </div>
+      <div class="grid">
+        <article class="card" data-reveal><div class="icon">🏆</div><h3>تنظيم ملفات العمل</h3><p>إعداد ملف إنجاز رقمي يسهل تصفحه وتحديثه وإرفاق الشواهد داخله.</p></article>
+        <article class="card" data-reveal><div class="icon">✨</div><h3>مبادرات طلابية</h3><p>تنفيذ فعاليات تعزز الانتماء المدرسي وتدعم القيم الإيجابية لدى الطالبات.</p></article>
+        <article class="card" data-reveal><div class="icon">✅</div><h3>متابعة مستمرة</h3><p>بناء آلية متابعة للغياب والسلوك والملاحظات لضمان سرعة المعالجة والتحسين.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="files">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div><h2>رفع الملفات والمرفقات</h2><p>يمكن إضافة الملفات من الجهاز للعرض داخل هذه الصفحة. للحفظ الدائم على الإنترنت يلزم ربط الموقع باستضافة أو قاعدة بيانات.</p></div>
+      </div>
+      <div class="upload-zone" id="dropZone" data-reveal>
+        <div class="icon" style="margin-inline:auto">⬆️</div>
+        <h3>اسحبي الملفات هنا أو اضغطي للاختيار</h3>
+        <p>يدعم الصور وملفات PDF وWord والعروض. تظهر الملفات في القائمة مباشرة.</p>
+        <label class="btn primary" for="fileInput">اختيار ملفات</label>
+        <input id="fileInput" type="file" multiple accept="image/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx" />
+        <div id="fileList" class="file-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div><h2>معرض الصور</h2><p>نماذج مكانية للصور، ويمكن استبدالها لاحقًا بصور الفعاليات والشواهد.</p></div>
+      </div>
+      <div class="gallery">
+        <div class="photo" data-reveal><span>فعاليات مدرسية</span></div>
+        <div class="photo" data-reveal><span>برامج طالبات</span></div>
+        <div class="photo" data-reveal><span>مبادرات وقيم</span></div>
+        <div class="photo" data-reveal><span>تكريم وإنجاز</span></div>
+        <div class="photo" data-reveal><span>بيئة مدرسية</span></div>
+        <div class="photo" data-reveal><span>شواهد العمل</span></div>
+        <div class="photo" data-reveal><span>لقاءات تربوية</span></div>
+        <div class="photo" data-reveal><span>تطوير وتحسين</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© ملف إنجاز أ. منى سعيد الزنبحي — وكيلة الشؤون الطلابية</div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: .16 });
+    revealItems.forEach(item => observer.observe(item));
+
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+
+    function formatSize(bytes) {
+      if (!bytes) return '0 KB';
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(1024));
+      return `${(bytes / Math.pow(1024, i)).toFixed(1)} ${sizes[i]}`;
+    }
+
+    function renderFiles(files) {
+      [...files].forEach(file => {
+        const item = document.createElement('div');
+        item.className = 'file-item';
+        item.innerHTML = `<strong>📎 ${file.name}</strong><span>${formatSize(file.size)}</span>`;
+        fileList.appendChild(item);
+      });
+    }
+
+    fileInput.addEventListener('change', e => renderFiles(e.target.files));
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, e => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, e => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+      });
+    });
+
+    dropZone.addEventListener('drop', e => renderFiles(e.dataTransfer.files));
+  </script>
+</body>
+</html>
